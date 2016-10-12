@@ -5,16 +5,9 @@
   <meta name="viewport" content="width=device-width">
   <title>Affiche table chevaux </title>
   <style type="text/css">
-  table {
-    width: auto;
-}
-
-th {
-    height: 50px;
-}
-  table, th, td {
+   table, th, td {
    border: 1px solid black;
-}
+    }
   </style>
 </head>
 <body>
@@ -27,22 +20,19 @@ th {
 //tjrs :on commence par inclure le fichier connexion
 include('../connexion.php');
 // écrire la requete de la lecture de la table cheval et la mettre dans une boite $req.
- $req ="SELECT * FROM cheval";
+$req ="SELECT * FROM cheval";
 //executer la requête à l'aide de la fonction exec et mettre le resultat dans $resultat
-
 $armoire = $bdd->query($req); 
 //lecture des tiroirs de l'armoire $resultat à l'aide de la fonction foreach 
-
 foreach($armoire  as $tiroir ){
 // mettre ds une ligne
-echo '<tr><td>'.$tiroir['ID'].'</td><td>'.$tiroir['nom'].'</td><td>'.$tiroir['race'].'</td><td><img src ="../images/'.$tiroir['image'].'"></td></tr>';
+echo '<tr><td>'.$tiroir['ID'].'</td>
+          <td>'.$tiroir['nom'].'</td>
+          <td>'.$tiroir['race'].'</td>
+          <td><img src ="../images/'.$tiroir['image'].'"></td>
+      </tr>';
 }
-
-
-
-
 ?>
-
 </table>
 </body>
 </html>
