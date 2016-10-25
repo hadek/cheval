@@ -13,6 +13,7 @@ $req1 = $bdd->prepare('SELECT * FROM `cheval` WHERE ID = :ID');
 $resultat=$req1->fetch(PDO::FETCH_ASSOC);
 //chercher les resultat 
 ?>
+ //formulaire de modifcation de l'enregistrement
 <form method="POST" action="update2.php" enctype="multipart/form-data">
  <input type="hidden"  name="ID" value ="<?php echo $ID;?>"></p>
 <p>Nom <input type="text"  name="nom" value ="<?php echo $resultat['nom'];?>"></p>
